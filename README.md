@@ -1,47 +1,79 @@
 # 🧠 ArxivInsight
 
-> *Resumos claros de pesquisas complexas.*
+> *Transforme papers complexos em resumos claros e acessíveis.*
 
-## 📘 Visão geral
+## 😵‍💫 O problema
 
-O **ArxivInsight** é uma ferramenta que utiliza o **Azure OpenAI** para gerar **resumos não técnicos** de artigos científicos publicados no [arXiv.org](https://arxiv.org).
+Você já tentou entender um artigo como
 
-O objetivo do projeto é **tornar o conhecimento científico mais acessível** — traduzindo textos técnicos em explicações simples, envolventes e compreensíveis por qualquer pessoa interessada em ciência e tecnologia.
+> **“Attention Is All You Need”**
+> ou qualquer outro paper do [arXiv.org](https://arxiv.org)?
 
-## 🚀 Funcionalidades principais
+Esses estudos são fundamentais para a ciência moderna — mas, para quem não domina o jargão técnico, eles soam como outro idioma.
 
-* 🔗 Entrada via **link ou ID do arXiv**
-* 🧾 Extração automática de **título, autores e resumo original**
-* 🧠 Geração de **resumo não técnico** via **Azure OpenAI (GPT)**
-* 🌍 Resultados claros e acessíveis, destacando:
+Muitas vezes, tudo o que queremos é **entender a essência**:
 
-  * O problema que o estudo resolve
-  * A ideia principal da solução
-  * O impacto e a importância prática
+* O que esse estudo realmente faz?
+* Por que ele é importante?
+* Como ele pode impactar o mundo real?
 
-## 🧩 Arquitetura geral
+Mas a barreira da linguagem científica torna isso difícil.
+Foi por isso que nasceu o **ArxivInsight**.
 
-```
-arxiv.org → extração de dados → Azure OpenAI → resumo não técnico → exibição
-```
+## 💡 A solução
 
-### Componentes
+O **ArxivInsight** é uma ferramenta de **linha de comando (CLI)** que utiliza o **Azure OpenAI** para **traduzir papers técnicos do arXiv em resumos não técnicos e acessíveis**.
 
-* **Backend (Python)** – responsável por buscar artigos no arXiv e enviar o texto ao modelo.
-* **Azure OpenAI** – modelo GPT configurado para gerar resumos simplificados.
-* **API (FastAPI ou Flask)** – fornece endpoints para consumo via navegador ou integração externa.
-* **Frontend opcional** – interface simples (React, Streamlit ou HTML) para facilitar o uso.
+Basta colar o ID de um artigo — e o ArxivInsight gera um resumo que qualquer pessoa pode entender.
 
-## ⚙️ Instalação e uso
+Ele não simplifica demais, mas **explica com clareza**, destacando:
 
-### 1. Clonar o repositório
+* 🧩 **O problema** que o estudo aborda
+* 💡 **A ideia principal** da solução
+* 🌍 **O impacto prático** das descobertas
+
+## ⚙️ Como funciona
+
+| Etapa                 | Descrição                                                                      |
+| --------------------- | ------------------------------------------------------------------------------ |
+| **1️⃣ Entrada**       | Você fornece o ID do artigo do arXiv.                                  |
+| **2️⃣ Extração**      | O ArxivInsight busca automaticamente o título, autores e resumo técnico.       |
+| **3️⃣ Interpretação** | O Azure OpenAI (modelo GPT) reescreve o texto em linguagem clara e simples. |
+| **4️⃣ Exibição**      | O resumo é exibido diretamente no terminal, pronto para leitura.               |
+
+🧠 Em resumo: ele é o seu **tradutor pessoal de papers científicos**.
+
+## 🧭 Exemplo rápido
+
+> Exemplo: tentar entender “Attention Is All You Need”
 
 ```bash
-git clone https://github.com/<seu-usuario>/ArxivInsight.git
-cd ArxivInsight
+python arxivinsight.py 1706.03762
 ```
 
-### 2. Criar e ativar um ambiente virtual
+📤 **Saída esperada:**
+
+```
+📘 Título: Attention Is All You Need
+
+🎓 Autores: Ashish Vaswani,Noam Shazeer,Niki Parmar,Jakob Uszkoreit,Llion Jones,Aidan N. Gomez,Lukasz Kaiser,Illia Polosukhin
+
+🧩 Resumo não técnico:
+Um novo estudo propõe uma abordagem inovadora para melhorar a forma como as máquinas traduzem textos de um idioma para outro. Tradicionalmente, esses sistemas eram complexos e demorados, utilizando técnicas que envolviam redes neurais com múltiplas camadas. O problema que o estudo aborda é a necessidade de tornar esse processo mais eficiente, tanto em termos de tempo quanto de qualidade na tradução. A solução apresentada pelos pesquisadores é uma nova estrutura chamada Transformer, que se baseia apenas em mecanismos de atenção. Isso significa que o modelo consegue focar nas partes mais relevantes do texto de entrada, sem precisar das técnicas mais complicadas que eram usadas antes. Como resultado, o Transformer não só produz traduções de melhor qualidade, mas também é mais rápido para ser treinado. Os resultados foram impressionantes: o modelo alcançou novas marcas de qualidade em traduções do inglês para o alemão e do inglês para o francês, superando os melhores modelos existentes de forma significativa. Além disso, o Transformer mostrou que também pode ser aplicado com sucesso em outras tarefas de linguagem, como a análise de estruturas de frases. O impacto prático desse estudo é grande. Com essa nova abordagem, as máquinas poderão traduzir textos com mais precisão e em menos tempo, o que pode beneficiar desde tradutores profissionais até a utilização de serviços de tradução em plataformas online, tornando a comunicação entre diferentes idiomas mais acessível e eficiente.
+
+link: https://arxiv.org/pdf/1706.03762
+```
+
+## ⚙️ Instalação
+
+### 1️⃣ Clone o repositório
+
+```bash
+git clone https://github.com/igorcarvalhh/arxiv-insight.git
+cd arxiv-insight
+```
+
+### 2️⃣ Crie e ative o ambiente virtual
 
 ```bash
 python -m venv venv
@@ -49,103 +81,62 @@ source venv/bin/activate   # Linux/macOS
 venv\Scripts\activate      # Windows
 ```
 
-### 3. Instalar dependências
+### 3️⃣ Instale as dependências
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Configurar variáveis de ambiente
+### 4️⃣ Configure o acesso ao Azure
 
-Crie um arquivo `.env` com as seguintes chaves:
+Crie um arquivo `.env` na raiz com suas credenciais:
 
 ```
-AZURE_OPENAI_API_KEY=<sua-chave-do-azure>
-AZURE_ENDPOINT=<seu-endpoint-do-azure>
-DEPLOYMENT_NAME=<nome-do-modelo>
+AZURE_OPENAI_API_KEY=<sua-chave>
+AZURE_ENDPOINT=<seu-endpoint>
+DEPLOYMENT_NAME=<modelo>
 ```
 
-### 5. Executar o servidor
+## ▶️ Uso
 
-Se estiver usando **FastAPI**:
+### Modo básico
 
 ```bash
-uvicorn main:app --reload
+python arxivinsight.py <arxiv_id>
 ```
 
-A API ficará disponível em:
-➡️ `http://127.0.0.1:8000`
+### Exemplo
 
-## 🧠 Exemplo de uso
-
-### Endpoint
-
-`POST /summarize`
-
-### Corpo da requisição:
-
-```json
-{
-  "arxiv_id": "2403.12345"
-}
+```bash
+python arxivinsight.py https://arxiv.org/abs/2403.12345
 ```
 
-### Resposta esperada:
+### Execução via terminal
 
-```json
-{
-  "title": "Sketch2BIM: A Multi-Agent Human-AI Collaborative Pipeline...",
-  "authors": ["Abir Khan Ratul", "Sanjay Acharjee", "..."],
-  "technical_summary": "This study introduces a multi-agent pipeline...",
-  "non_technical_summary": "O estudo apresenta uma nova forma de transformar plantas desenhadas à mão em modelos 3D, combinando pessoas e inteligência artificial..."
-}
-```
+![CLI Example](https://fakeimg.pl/800x200/1e1e1e/e8e8e8?text=python+arxivinsight.py+1706.03762\&font=consolas)
 
-## 📚 Tecnologias utilizadas
+### Saída formatada
 
-* **Python 3.10+**
-* **FastAPI** (ou Flask)
-* **Requests** + **BeautifulSoup4**
-* **Azure OpenAI Service**
-* **Dotenv**
-* **Uvicorn**
+![Output Example](https://fakeimg.pl/800x350/222/eee?text=Resumo+gerado+no+terminal\&font=consolas)
 
-## 🧭 Roadmap futuro
+## 🧰 Tecnologias usadas
 
-* [ ] Suporte a múltiplos idiomas (português, inglês, espanhol)
-* [ ] Interface web interativa (React/Streamlit)
-* [ ] Resumos técnicos e não técnicos lado a lado
-* [ ] Curadoria automática de artigos por área
-* [ ] Integração com Zotero, Notion e Obsidian
+* 🐍 **Python 3.14**
+* ☁️ **Azure OpenAI (gpt-4o-mini)**
+* 🔍 **BeautifulSoup4** — para coletar texto do arXiv
+* ⚙️ **Requests** — para buscar artigos
+* 🔐 **python-dotenv** — para gerenciar chaves
 
-## 💡 Motivação
+## 🤝 Contribua
 
-A maioria das pesquisas publicadas em plataformas como o arXiv é escrita em linguagem altamente técnica.
-O **ArxivInsight** busca quebrar essa barreira — ajudando estudantes, educadores e curiosos a entender *o que a ciência está fazendo agora*, sem precisar de formação específica na área.
+Quer participar?
 
-## 🤝 Contribuição
-
-Contribuições são bem-vindas!
-Siga os passos:
-
-1. Faça um fork do projeto
-2. Crie uma branch (`git checkout -b feature/nome-da-feature`)
-3. Faça o commit (`git commit -m "Adiciona nova feature"`)
-4. Envie para o repositório remoto (`git push origin feature/nome-da-feature`)
-5. Abra um Pull Request 🎉
+1. Faça um fork 🍴
+2. Crie uma branch (`git checkout -b feature/nova-feature`)
+3. Faça o commit e o push 🚀
+4. Abra um Pull Request
 
 ## 📄 Licença
 
 Distribuído sob a licença **MIT**.
-Consulte o arquivo `LICENSE` para mais informações.
-
-## 🌟 Exemplo visual (futuro)
-
-> *Um painel simples exibindo o resumo não técnico e o resumo original lado a lado.*
-
-```
-┌──────────────────────────────┬──────────────────────────────┐
-│        Resumo original       │       Resumo não técnico     │
-│  Texto do paper técnico...   │  Explicação simples e clara  │
-└──────────────────────────────┴──────────────────────────────┘
-```
+Consulte o arquivo `LICENSE` para mais detalhes.
