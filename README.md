@@ -1,36 +1,50 @@
 # 🧠 ArxivInsight
 
 > *Transforme papers complexos em resumos claros e acessíveis.*
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/8f1cd685-a02f-44b7-b24d-a2089e1eda08" />
+<img width="1113" height="624" alt="image" src="https://github.com/user-attachments/assets/0ac1adc7-4281-4228-803d-e439949db17f" />
 
 ## 😵‍💫 O problema
+A ciência está avançando mais rápido do que nunca —
+mas o conhecimento ainda fala um idioma que poucos entendem.
 
-Você já tentou entender um artigo como
+Para quem tenta ler um artigo científico, o cenário é sempre o mesmo:
+**jargões técnicos, linguagem densa, fórmulas complexas.**
+A curiosidade se transforma em frustração,
+e o que deveria inspirar acaba afastando.
 
-> **“Attention Is All You Need”**
-> ou qualquer outro paper do [arXiv.org](https://arxiv.org)?
+### Por que o ArxivInsight nasceu
 
-Esses estudos são fundamentais para a ciência moderna — mas, para quem não domina o jargão técnico, eles soam como outro idioma.
+Foi para mudar isso que nasceu o **ArxivInsight**.
+Nosso propósito é claro: **tornar a ciência compreensível e acessível a todos.**
 
-Muitas vezes, tudo o que queremos é **entender a essência**:
+Traduzimos artigos científicos em **resumos claros, simples e acessíveis** —
+revelando a essência de cada estudo:
 
-* O que esse estudo realmente faz?
-* Por que ele é importante?
-* Como ele pode impactar o mundo real?
+* 🧩 **O que ele faz**
+* 💡 **Por que é importante**
+* 🌍 **Como pode transformar o mundo real**
 
-Mas a barreira da linguagem científica torna isso difícil.
-Foi por isso que nasceu o **ArxivInsight**.
+### Muito além de uma tradução
+
+O **ArxivInsight** é mais do que uma ferramenta de tradução —
+é um **movimento para incentivar a divulgação científica**,
+aproximando **pesquisadores, estudantes, profissionais e curiosos**.
+
+Queremos derrubar o muro que separa a ciência da sociedade —
+porque **conhecimento só tem valor quando pode ser compartilhado.**
 
 ## 💡 A solução
 
-O **ArxivInsight** é uma ferramenta de **linha de comando (CLI)** que utiliza o **Azure OpenAI** para **traduzir papers técnicos do arXiv em resumos não técnicos e acessíveis**.
+O **ArxivInsight** é uma ferramenta de linha de comando (CLI) que utiliza o **Azure OpenAI** para traduzir *papers* técnicos do **[arXiv.org](https://arxiv.org)** em resumos não técnicos, claros e acessíveis.
 
-Basta colar o ID de um artigo — e o ArxivInsight gera um resumo que qualquer pessoa pode entender.
+Basta colar o **ID de um artigo do [arXiv.org](https://arxiv.org)** — e o ArxivInsight gera automaticamente um resumo que qualquer pessoa pode entender.
 
-Ele não simplifica demais, mas **explica com clareza**, destacando:
+A ferramenta não simplifica demais, mas explica com precisão, destacando:
 
-* 🧩 **O problema** que o estudo aborda
-* 💡 **A ideia principal** da solução
-* 🌍 **O impacto prático** das descobertas
+* 🧩 **O problema que o estudo aborda**
+* 💡 **A ideia principal da solução**
+* 🌍 **O impacto prático das descobertas**
 
 ## ⚙️ Como funciona
 
